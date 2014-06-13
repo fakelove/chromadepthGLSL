@@ -1,3 +1,4 @@
+uniform sampler2DRect diffusemap;
 varying float depth;
 varying float lighting;
 varying float specular;
@@ -17,7 +18,6 @@ void main (void)
     float tdepth = depth/0.9;
     depth2 = depth2/0.81;
     rgb.r = -2.14*depth2*depth2 -1.07*depth2*depth + 0.133*depth2 +0.0667*tdepth +1.0;
-
-
+    
     gl_FragColor = rgb;
 }

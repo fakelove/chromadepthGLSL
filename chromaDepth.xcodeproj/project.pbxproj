@@ -62,6 +62,8 @@
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		C8F522A5194B7D0400041F91 /* chromadepth.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = chromadepth.frag; sourceTree = "<group>"; };
 		C8F522A6194B7D0400041F91 /* chromadepth.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = chromadepth.vert; sourceTree = "<group>"; };
+		C8F522A8194B934A00041F91 /* chromadepth_texture.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = chromadepth_texture.frag; sourceTree = "<group>"; };
+		C8F522A9194B934A00041F91 /* chromadepth_texture.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = chromadepth_texture.vert; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
 		E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
@@ -152,6 +154,8 @@
 		C8F522A4194B7D0400041F91 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
+				C8F522A8194B934A00041F91 /* chromadepth_texture.frag */,
+				C8F522A9194B934A00041F91 /* chromadepth_texture.vert */,
 				C8F522A5194B7D0400041F91 /* chromadepth.frag */,
 				C8F522A6194B7D0400041F91 /* chromadepth.vert */,
 			);

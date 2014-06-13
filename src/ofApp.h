@@ -21,12 +21,14 @@ public:
 
     ofShader chroma;
     ofFbo fbo;
-    ofIcoSpherePrimitive sphere;
     ofEasyCam cam;
     ofLight light;
     
+    ofVideoGrabber vidcam;
+    ofIcoSpherePrimitive sphere;
+    
     vector<ofVec3f> posns;
     vector<ofColor> cols;
-    ofVboMesh boxMesh;
+    ofVboMesh mesh;
 
 };
