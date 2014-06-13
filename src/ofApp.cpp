@@ -4,7 +4,7 @@
 void ofApp::setup(){
     ofSetCoordHandedness(OF_RIGHT_HANDED);
     sphere.setRadius(100);
-    chroma.load("shaders/chromadepth_texture");
+    chroma.load("shaders/chromadepth");
     
     ofFbo::Settings fboSettings;
     
@@ -19,9 +19,9 @@ void ofApp::setup(){
     fbo.end();
     
     // Setup box positions
-    for (unsigned i = 0; i < 5; ++i)
+    for (unsigned i = 0; i < 150; ++i)
     {
-        posns.push_back(ofVec3f(ofRandom(-300, 300)*2, ofRandom(-300, 300)*2, ofRandom(-300, 300)*2));
+        posns.push_back(ofVec3f(ofRandom(-300, 300), ofRandom(-300, 300), ofRandom(-300, 300)));
         cols.push_back(ofColor::fromHsb(255 * i / (float)100, 255, 255, 255));
     }
     
@@ -35,7 +35,7 @@ void ofApp::setup(){
     
     
     
-    sphere.setRadius(200);
+    sphere.setRadius(20);
     sphere.mapTexCoordsFromTexture(vidcam.getTextureReference());
     
     mesh = sphere.getMesh();
@@ -43,26 +43,26 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    vidcam.update();
-    fbo.begin();
-    ofClear(0, 0, 0);
-    cam.begin();
-    ofPushStyle();
-    
-    glEnable(GL_DEPTH_TEST);
-    for (unsigned i = 0; i < posns.size(); ++i)
-    {
-        ofSetColor(cols[i]);
-        ofPushMatrix();
-        ofRotate(sin(ofGetElapsedTimef()*0.123)*360, 1, 1, 0);
-        ofTranslate(posns[i]);
-        mesh.draw();
-        ofPopMatrix();
-    }
-    ofPopStyle();
-
-    cam.end();
-    fbo.end();
+//    vidcam.update();
+//    fbo.begin();
+//    ofClear(0, 0, 0);
+//    cam.begin();
+//    ofPushStyle();
+//    
+//    glEnable(GL_DEPTH_TEST);
+//    for (unsigned i = 0; i < posns.size(); ++i)
+//    {
+//        ofSetColor(cols[i]);
+//        ofPushMatrix();
+//        ofRotate(sin(ofGetElapsedTimef()*0.123)*360, 1, 1, 0);
+//        ofTranslate(posns[i]);
+//        mesh.draw();
+//        ofPopMatrix();
+//    }
+//    ofPopStyle();
+//
+//    cam.end();
+//    fbo.end();
 }
 
 //--------------------------------------------------------------
@@ -75,8 +75,8 @@ void ofApp::draw(){
     cam.begin();
     chroma.begin();
     chroma.setUniform1f("near", 0);
-    chroma.setUniform1f("far", 2000);
-    chroma.setUniformTexture("diffusemap", vidcam.getTextureReference(), 0);
+    chroma.setUniform1f("far", 1000);
+    //chroma.setUniformTexture("diffusemap", vidcam.getTextureReference(), 0);
     ofPushStyle();
     
     glEnable(GL_DEPTH_TEST);
